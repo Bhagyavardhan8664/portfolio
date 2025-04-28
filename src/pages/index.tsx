@@ -119,11 +119,12 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  type SkillBarProps = {
+  name: string;
+  level: number;
+};
 
-  const SkillBar = ({ name, level }) => (
+const SkillBar = ({ name, level }: SkillBarProps) => (
     <div className="mb-4">
       <div className="flex justify-between items-center mb-1">
         <span className="text-sm font-medium">{name}</span>
